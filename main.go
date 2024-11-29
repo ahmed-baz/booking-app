@@ -5,23 +5,34 @@ import "fmt"
 func main() {
 	var conferenceName string = "Go Conference"
 	const conferenceTickets int = 50
-	remainingTickets := 30
+	remainingTickets := conferenceTickets
 	fmt.Println("Hello World from GO")
 	//fmt.Print("Welcome to our Conference \"", conferenceName, "\" booking application\n")
 	//fmt.Print("We had total of ", conferenceTickets, " tickets, and the available are ", remainingTickets, " tickets\n")
-	fmt.Printf("Welcome to our Conference \"%v\" for booking application\n", conferenceName)
-	fmt.Printf("We had total of %v tickets, and the available are %v tickets\n", conferenceTickets, remainingTickets)
 
-	var userName string
+	var firstName string
+	var lastName string
+	var email string
 	var userTicket int
 
-	fmt.Print("Your name : ")
-	fmt.Scan(&userName)
+	fmt.Print("Your first name : ")
+	fmt.Scan(&firstName)
+
+	fmt.Print("Your last name : ")
+	fmt.Scan(&lastName)
+
+	fmt.Print("Your email address : ")
+	fmt.Scan(&email)
+
 	fmt.Print("Ticket No : ")
 	fmt.Scan(&userTicket)
 
-	fmt.Printf("Type of conferenceName is %T and ,conferenceTickets is %T ,and remainingTickets is %T \n", conferenceName, conferenceTickets, remainingTickets)
-	fmt.Printf("The user %v booked %v tickets. \n", userName, userTicket)
+	remainingTickets = remainingTickets - userTicket
+
+	//fmt.Printf("Type of conferenceName is %T and ,conferenceTickets is %T ,and remainingTickets is %T \n", conferenceName, conferenceTickets, remainingTickets)
+	fmt.Printf("Welcome to our Conference \"%v\" for booking application\n", conferenceName)
+	fmt.Printf("We had total of %v tickets, and the available are %v tickets\n", conferenceTickets, remainingTickets)
+	fmt.Printf("Thanks %v %v with for booking %v tickets, you will receive a confirmation email on %v . \n", firstName, lastName, userTicket, email)
 
 	// GO   	JAVA
 	// int8     byte
