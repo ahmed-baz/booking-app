@@ -7,6 +7,7 @@ func main() {
 	const conferenceTickets int = 50
 	remainingTickets := conferenceTickets
 	var bookings [50]string
+	var bookingSlice []string
 	fmt.Println("Hello World from GO")
 	//fmt.Print("Welcome to our Conference \"", conferenceName, "\" booking application\n")
 	//fmt.Print("We had total of ", conferenceTickets, " tickets, and the available are ", remainingTickets, " tickets\n")
@@ -30,11 +31,19 @@ func main() {
 
 	remainingTickets = remainingTickets - userTicket
 	bookings[0] = firstName + " " + lastName
+	bookingSlice = append(bookingSlice, firstName+" "+lastName)
 
+	fmt.Println("Array in GO")
 	fmt.Printf("Array all data %v\n", bookings)
 	fmt.Printf("Array first item %v\n", bookings[0])
 	fmt.Printf("Array type %T\n", bookings)
 	fmt.Printf("Array size %v\n", len(bookings))
+
+	fmt.Println("Slice in GO")
+	fmt.Printf("Slice all data %v\n", bookingSlice)
+	fmt.Printf("Slice first item %v\n", bookingSlice[0])
+	fmt.Printf("Slice type %T\n", bookingSlice)
+	fmt.Printf("Slice size %v\n", len(bookingSlice))
 
 	//fmt.Printf("Type of conferenceName is %T and ,conferenceTickets is %T ,and remainingTickets is %T \n", conferenceName, conferenceTickets, remainingTickets)
 	fmt.Printf("Welcome to our Conference \"%v\" for booking application\n", conferenceName)
