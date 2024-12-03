@@ -6,6 +6,7 @@ func main() {
 	var conferenceName string = "Go Conference"
 	const conferenceTickets int = 50
 	remainingTickets := conferenceTickets
+	var bookings [50]string
 	fmt.Println("Hello World from GO")
 	//fmt.Print("Welcome to our Conference \"", conferenceName, "\" booking application\n")
 	//fmt.Print("We had total of ", conferenceTickets, " tickets, and the available are ", remainingTickets, " tickets\n")
@@ -28,11 +29,17 @@ func main() {
 	fmt.Scan(&userTicket)
 
 	remainingTickets = remainingTickets - userTicket
+	bookings[0] = firstName + " " + lastName
+
+	fmt.Printf("Array all data %v\n", bookings)
+	fmt.Printf("Array first item %v\n", bookings[0])
+	fmt.Printf("Array type %T\n", bookings)
+	fmt.Printf("Array size %v\n", len(bookings))
 
 	//fmt.Printf("Type of conferenceName is %T and ,conferenceTickets is %T ,and remainingTickets is %T \n", conferenceName, conferenceTickets, remainingTickets)
 	fmt.Printf("Welcome to our Conference \"%v\" for booking application\n", conferenceName)
 	fmt.Printf("We had total of %v tickets, and the available are %v tickets\n", conferenceTickets, remainingTickets)
-	fmt.Printf("Thanks %v %v with for booking %v tickets, you will receive a confirmation email on %v . \n", firstName, lastName, userTicket, email)
+	fmt.Printf("Thanks %v for booking %v tickets, you will receive a confirmation email on %v . \n", bookings[0], userTicket, email)
 
 	// GO   	JAVA
 	// int8     byte
