@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 func main() {
 
 	// 1.0 vars
@@ -64,5 +69,29 @@ func main() {
 		fmt.Printf("Slice type %T\n", bookingSlice)
 		fmt.Printf("Slice size %v\n", len(bookingSlice))
 	*/
+
+	// 5.0 loops
+
+	var count int = 3
+	var firstName string
+	var lastName string
+	var fullNames []string
+
+	for i := 0; i < count; i++ {
+		fmt.Print("first name : ")
+		fmt.Scan(&firstName)
+
+		fmt.Print("last name : ")
+		fmt.Scan(&lastName)
+
+		fullNames = append(fullNames, firstName+" "+lastName)
+	}
+
+	var firstNames []string
+	for _, fullName := range fullNames {
+		var names = strings.Fields(fullName)
+		firstNames = append(firstNames, names[0])
+	}
+	fmt.Printf("first names are %v ", firstNames)
 
 }
