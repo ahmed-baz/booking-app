@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
+
+//import ("strings")
 
 func main() {
 
@@ -72,26 +73,42 @@ func main() {
 
 	// 5.0 loops
 
-	var count int = 3
-	var firstName string
-	var lastName string
-	var fullNames []string
+	/*
+		var count int = 3
+		var firstName string
+		var lastName string
+		var fullNames []string
 
-	for i := 0; i < count; i++ {
-		fmt.Print("first name : ")
-		fmt.Scan(&firstName)
+		for i := 0; i < count; i++ {
+			fmt.Print("first name : ")
+			fmt.Scan(&firstName)
 
-		fmt.Print("last name : ")
-		fmt.Scan(&lastName)
+			fmt.Print("last name : ")
+			fmt.Scan(&lastName)
 
-		fullNames = append(fullNames, firstName+" "+lastName)
+			fullNames = append(fullNames, firstName+" "+lastName)
+		}
+
+		var firstNames []string
+		for _, fullName := range fullNames {
+			var names = strings.Fields(fullName)
+			firstNames = append(firstNames, names[0])
+		}
+		fmt.Printf("first names are %v ", firstNames)
+	*/
+
+	// 6.0 IF
+
+	var name string
+	var age int32
+	fmt.Print("your name : ")
+	fmt.Scan(&name)
+	fmt.Print("your age : ")
+	fmt.Scan(&age)
+	if age > 18 {
+		fmt.Printf("Hello %v , your age is %v", name, age)
+	} else {
+		fmt.Printf("Hello %v , your age is less than 18", name)
 	}
-
-	var firstNames []string
-	for _, fullName := range fullNames {
-		var names = strings.Fields(fullName)
-		firstNames = append(firstNames, names[0])
-	}
-	fmt.Printf("first names are %v ", firstNames)
 
 }
